@@ -1,8 +1,8 @@
 # k8s-ubuntu
 Kubernetes cluster on Ubuntu
 
-# Configure the Master Node
-## install docker, kubeadm, kubelet, kubectl 
+## Configure the Master Node
+### install docker, kubeadm, kubelet, kubectl 
 ```
 $ apt-get update && apt-get install -y apt-transport-https
 $ curl -s https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -15,10 +15,10 @@ $ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" \
 $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 ```
 
-## turn off swap
+### turn off swap
 `swapoff -a`
 
-## Configure Kubernetes
+### Configure Kubernetes
 * `kubeadm init --apiserver-advertise-address=<MASTER_IP> --pod-network-cidr=10.244.1.0/16`
 * get message (example):
 ```
@@ -39,28 +39,28 @@ as root:
 
   kubeadm join 192.168.0.15:6443 --token puvb9w.85mnirj5i8nceyaa --discovery-token-ca-cert-hash sha256:<HASH>
 ```
-## Create a new user
+### Create a new user
 ```
 adduser ubuntu
 usermod -aG sudo ubuntu
 su - ubuntu
 ```
 
-## Set up the Kubernetes config as the new user:
+### Set up the Kubernetes config as the new user:
 ```
 $ mkdir -p ~/.kube
 $ sudo cp -i /etc/kubernetes/admin.conf ~/.kube/config
 $ sudo chown $(id -u):$(id -g) ~/.kube/config
 ```
 
-## Again, as the new user, deploy a flannel network to the cluster:
+### Again, as the new user, deploy a flannel network to the cluster:
 `kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml`
 
 
 
-# Configure the Worker Nodes
+## Configure the Worker Nodes
 
-## install docker, kubeadm, kubelet, kubectl 
+### install docker, kubeadm, kubelet, kubectl 
 
 ```
 $ apt-get update && apt-get install -y apt-transport-https
@@ -74,27 +74,27 @@ $ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" \
 $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 ```
 
-## turn off swap
+### turn off swap
 `swapoff -a`
 
-## Configure Kubernetes
+### Configure Kubernetes
 `kubeadm join 192.168.0.15:6443 --token puvb9w.85mnirj5i8nceyaa --discovery-token-ca-cert-hash sha256:<HASH>`
 
-# Check
+## Check
 * `kubectl get nodes`
 * `kubectl get pods --all-namespaces`
 
-# dashboard
+## dashboard
 * `kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml`
 * `kubectl proxy`
 
-# Config Gitlab
+## Config Gitlab
 * `kubectl get secrets`
 * 
 
 
 
 
-# links
+## links
 * https://mherman.org/blog/setting-up-a-kubernetes-cluster-on-ubuntu/
 * https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-18-04-bionic-beaver-linux

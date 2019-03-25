@@ -2,6 +2,9 @@
 Kubernetes cluster on Ubuntu
 
 ## Configure the Master Node
+
+### add hostnames/ip of master and worker modes to /etc/hosts (optional)
+
 ### install docker, kubeadm, kubelet, kubectl 
 ```
 $ apt-get update && apt-get install -y apt-transport-https
@@ -84,7 +87,7 @@ $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 * `kubectl get nodes`
 * `kubectl get pods --all-namespaces`
 
-## dashboard
+## Dashboard
 * `kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml`
 * `kubectl proxy`
 

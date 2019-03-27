@@ -83,7 +83,7 @@ $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 ### Configure Kubernetes
 `kubeadm join 192.168.0.15:6443 --token puvb9w.85mnirj5i8nceyaa --discovery-token-ca-cert-hash sha256:<HASH>`
 
-#### if tocker expired
+#### if tocken expired
 * `kubeadm token create --print-join-command`
 
 #### if join problem:
@@ -94,6 +94,7 @@ $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 ## Check
 * `kubectl get nodes`
 * `kubectl get pods --all-namespaces`
+* `kubectl get all --all-namespaces`
 
 ## Dashboard
 * `kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml`

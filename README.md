@@ -83,6 +83,9 @@ $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 ### Configure Kubernetes
 `kubeadm join 192.168.0.15:6443 --token puvb9w.85mnirj5i8nceyaa --discovery-token-ca-cert-hash sha256:<HASH>`
 
+#### if tocker expired
+* `kubeadm token create --print-join-command`
+
 #### if join problem:
 * `kubeadm join -v=6 ...`
 * `/usr/bin/kubeadm reset`

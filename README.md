@@ -56,9 +56,15 @@ $ sudo cp -i /etc/kubernetes/admin.conf ~/.kube/config
 $ sudo chown $(id -u):$(id -g) ~/.kube/config
 ```
 
-### Again, as the new user, deploy a flannel network to the cluster:
+### Deploy a flannel network to the cluster:
 `kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml`
 
+### Get tocken for join working nodes
+* `kubeadm token create`
+* get discovery-token-ca-cert-hash:
+  * `openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | \
+   openssl dgst -sha256 -hex | sed 's/^.* //'`
+* OR `kubeadm token create --print-join-command`
 
 
 ## Configure the Worker Nodes
@@ -148,3 +154,4 @@ systemctl restart docker
 ## links
 * https://mherman.org/blog/setting-up-a-kubernetes-cluster-on-ubuntu/
 * https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-18-04-bionic-beaver-linux
+* https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/

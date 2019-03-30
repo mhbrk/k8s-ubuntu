@@ -17,6 +17,8 @@ $ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" \
     > /etc/apt/sources.list.d/kubernetes.list
 $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 ```
+### hold tools versions
+`sudo apt-mark hold docker-ce kubelet kubeadm kubectl`
 
 ### turn off swap
 `swapoff -a`
@@ -82,6 +84,8 @@ $ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" \
     > /etc/apt/sources.list.d/kubernetes.list
 $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 ```
+### hold tools versions
+`sudo apt-mark hold docker-ce kubelet kubeadm kubectl`
 
 ### turn off swap
 `swapoff -a`

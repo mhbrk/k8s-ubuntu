@@ -68,6 +68,7 @@ $ sudo chown $(id -u):$(id -g) ~/.kube/config
    openssl dgst -sha256 -hex | sed 's/^.* //'`
 * OR `kubeadm token create --print-join-command`
 
+---
 
 ## Configure the Worker Nodes
 
@@ -100,6 +101,8 @@ $ apt-get update && apt-get install -y kubeadm kubelet kubectl
 * `kubeadm join -v=6 ...`
 * `/usr/bin/kubeadm reset`
 * run again `kubeadm join ...`
+
+---
 
 ## Check
 * `kubectl get nodes`

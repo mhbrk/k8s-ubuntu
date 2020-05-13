@@ -1,6 +1,13 @@
 # k8s-ubuntu
 Kubernetes cluster on Ubuntu 18.04(16.04)
 
+## links
+* https://mherman.org/blog/setting-up-a-kubernetes-cluster-on-ubuntu/
+* https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-18-04-bionic-beaver-linux
+* https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
+* NEW: https://loves.cloud/setting-up-a-kubernetes-cluster-on-ubuntu-18-04/
+---
+
 ## Configure the Master Node
 
 ### add hostnames/ip of master and worker modes to /etc/hosts (optional)
@@ -158,8 +165,4 @@ systemctl restart docker
 ```
 ---
 
-## links
-* https://mherman.org/blog/setting-up-a-kubernetes-cluster-on-ubuntu/
-* https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-18-04-bionic-beaver-linux
-* https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
-* NEW: https://loves.cloud/setting-up-a-kubernetes-cluster-on-ubuntu-18-04/
+

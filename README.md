@@ -162,3 +162,4 @@ systemctl restart docker
 * https://mherman.org/blog/setting-up-a-kubernetes-cluster-on-ubuntu/
 * https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-18-04-bionic-beaver-linux
 * https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
+* NEW: https://loves.cloud/setting-up-a-kubernetes-cluster-on-ubuntu-18-04/
